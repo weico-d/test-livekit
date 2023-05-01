@@ -19,10 +19,7 @@ registerGlobals();
 // AppRegistry.registerComponent(appName, () => App);
 export default function App() {
   return (
-    <View style={styles.container}>
-      <App2 />
-      <StatusBar style="auto" />
-    </View>
+    <App2 />
   );
 }
 

@@ -67,12 +67,16 @@ export const RoomPage = ({
       //   }
       // });
       await AudioSession.startAudioSession();
-      await room.connect(url, token, {});
+      //TODO test key  change
+      await room.connect(url, 'here test key!', {});
       console.log('connected to ', url, ' ', token);
       setIsConnected(true);
     };
 
-    connect();
+    connect().catch((er) => {
+      console.log('链接失败:')
+      console.log(er)
+    });
     return () => {
       room.disconnect();
       AudioSession.stopAudioSession();
